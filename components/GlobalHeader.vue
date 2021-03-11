@@ -1,13 +1,20 @@
 <template lang="en">
   <header>
-    Welcome!
+    Welcome! {{msg}}
     <hr>
   </header>
 </template>
 
 <script>
+import {listOfThings} from "../localDatabase/globalData";
+
 export default {
-  name: "GlobalHeader"
+  name: "GlobalHeader",
+  data() {
+    return {
+      msg: listOfThings.athing
+    }
+  }
 }
 </script>
 
