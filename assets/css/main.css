@@ -1,10 +1,16 @@
 /* font-family: 'Lato', sans-serif; */
 
 :root {
+
   --primary-color: #212121;
   --secondary-color: #424242;
   --light-color: #EEEEEE;
-  --link-color: #FFC107;
+
+  --link-color: #FFD54F;
+  --link-color-focused: #FFC107;
+  --link-color-visited: #FFA000;
+  --link-underline: #FFE082;
+  --link-underline-focused: #FFE028;
 }
 
 * {
@@ -15,8 +21,10 @@
 
 body {
   font-family: 'Lato', sans-serif;
-  color: #333;
+  color: var(--light-color);
   line-height: 1.6;
+  /* background-color: var(--primary-color); */
+  background-color: black;
 }
 
 ul {
@@ -25,7 +33,7 @@ ul {
 
 a {
   text-decoration: none;
-  color: #333;
+  color: white;
 }
 
 h1, h2 {
@@ -39,7 +47,7 @@ p {
 }
 
 img {
-  width: 100%;
+  max-width: 100%;
 }
 
 code, pre {
@@ -48,11 +56,47 @@ code, pre {
   padding: 10px;
 }
 
+
+
+/* -------------------------------------------------------------------------- */
+/*                                  Utilities                                 */
+/* -------------------------------------------------------------------------- */
+
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 5px 5px;
+  padding: 0;
 }
+
+.darker-bg {
+  background-color: var(--primary-color);
+}
+
+.dark-bg {
+  background-color: var(--secondary-color);
+}
+
+.link {
+  text-decoration: none;
+  color: var(--link-color);
+  font-weight: 700;
+  border-bottom: 1px solid var(--link-underline);
+}
+
+.link:hover {
+  color: var(--link-color-focused);
+  border-bottom: 1px solid var(--link-underline-focused);
+}
+
+.link:visited {
+  color: var(--link-color-visited);
+  border-bottom: 1px solid var(--link-underline);
+}
+
+
+/* -------------------------------------------------------------------------- */
+/*                       Breakpoints for responsiveness                       */
+/* -------------------------------------------------------------------------- */
 
 /* Smaller devices breakpoint */
 @media only screen and (max-width: 768px) {

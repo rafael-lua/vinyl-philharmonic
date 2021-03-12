@@ -1,11 +1,9 @@
 <template>
-  <div class="container">
+  <div>
     <GlobalHeader />
     <Nuxt />
   </div>
 </template>
-
-
 
 <style>
 
