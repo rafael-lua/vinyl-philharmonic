@@ -2,10 +2,10 @@
   <header class="header">
     <div class= "container header-content">
       <div class="logotipo">
-        <img src="~/assets/logotipo-mini.png" alt="logo">
+        <nuxt-link to="/"><img src="~/assets/logotipo-mini.png" alt="logo"></nuxt-link>
       </div>
       <nav class="navbar">
-        <nuxt-link to="/">Home</nuxt-link>
+        <nuxt-link to="/">Concerts</nuxt-link>
       </nav>  
     </div>    
   </header>
@@ -44,7 +44,7 @@ export default {
   color: var(--primary-color);
 }
 
-.header a {
+.navbar a {
   font-size: 1.3em;
   text-decoration: none;
   color: var(--secondary-color);
@@ -52,7 +52,7 @@ export default {
   border-bottom: 1px solid grey;
 }
 
-.header a:hover {
+.navbar a:hover {
   color: var(--primary-color);
   border-bottom: 1px solid black;
   font-weight: 700;
