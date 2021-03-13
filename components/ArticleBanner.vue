@@ -2,26 +2,39 @@
   
   <div class="container article-banner">
     <div class="img-side">
-      <img src="~/assets/article-1.jpg" alt="Article 1 - A violin">
+      <img :src="require(`~/assets/article-${articles[focus].img_id}.jpg`)" alt="Article 1 - A violin">
       <ul class="dot-container">
-        <nuxt-link to="/"><li class="dot-button"></li></nuxt-link>
-        <nuxt-link to="/"><li class="dot-button"></li></nuxt-link>
-        <nuxt-link to="/"><li class="dot-button"></li></nuxt-link>
-        <nuxt-link to="/"><li class="dot-button"></li></nuxt-link>
+        <template v-for="dotFocusId in 4">
+          <li :key="dotFocusId - 1" class="dot-button" :class="(dotFocusId - 1) == focus ? 'dot-focus' : ''" @click="chooseArticle(dotFocusId - 1)"></li>
+        </template>
       </ul>
     </div>
     <div class="text-side">
-      <h1>TITLE</h1>
-      <h2>Description</h2>
-      <button class="article-button"> READ MORE</button>
+      <h1 class="light-color">{{articles[focus].title.toUpperCase()}}</h1>
+      <h2 class="light-color">{{articles[focus].desc}}</h2>
+      <nuxt-link to="/" class="article-button">READ MORE</nuxt-link> <!-- Bind the articles[focus] id into the button url -->
     </div>
   </div>
-  
+
 </template>
 
 <script>
+import {articlesList} from "../localDatabase/globalData";
+
 export default {
   name: "ArticleBanner",
+  data() {
+    return {
+      articles: articlesList,
+      focus: 0
+    }
+  },
+  methods: {
+    chooseArticle(id) {
+      this.focus = id;
+      console.log(id);
+    }
+  }
 }
 </script>
 
@@ -30,7 +43,9 @@ export default {
   position: relative;
   background-color: var(--primary-color);
   height: 400px;
-  border: 3px solid rgba(0, 0, 0, 0.5);
+  border-bottom: 3px solid rgba(0, 0, 0, 0.5);
+  border-right: 3px solid rgba(0, 0, 0, 0.5);
+  border-left: 3px solid rgba(0, 0, 0, 0.5);
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
@@ -48,7 +63,7 @@ export default {
   margin: 0 1em;
   width: 1em;
   height: 1em;
-  border: 2px solid rgba(255, 255, 255, 0.2);
+  border: 2px solid rgba(0, 0, 0, 0.7);
   border-radius: 50%;
   background-color: rgba(255, 255, 255, 0.2);
 }
@@ -58,21 +73,39 @@ export default {
   background-color: rgba(255, 255, 255, 0.95);
 }
 
+.dot-focus {
+  border: 2px solid rgba(0, 0, 0, 0.9);
+  background-color: rgba(255, 255, 255, 1);
+}
+
+.img-side {
+  max-width: 50%;
+}
+
 .text-side {
+  max-width: 50%;
   text-align: right;
   padding: 1em;
 }
 
 .text-side h1 {
   font-weight: 700;
-  font-size: 3em;
+  font-size: 1.75em;
+  padding: 0.75em;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.text-side h2 {
+  padding: 0 1em;
+  margin-top: 1em;
+  font-size: 1em;
 }
 
 .article-button {
   position: absolute;
   padding: 0.55em;
-  bottom: 1em;
-  right: 1em;
+  bottom: 1.5em;
+  right: 1.5em;
   background-color: rgba(0, 0, 0, 0);
   color: var(--link-color);
   border: 1px solid var(--link-color);

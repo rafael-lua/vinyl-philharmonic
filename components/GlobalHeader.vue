@@ -12,15 +12,9 @@
 </template>
 
 <script>
-import {listOfThings} from "../localDatabase/globalData";
 
 export default {
-  name: "GlobalHeader",
-  data() {
-    return {
-      msg: listOfThings.athing
-    }
-  }
+  name: "GlobalHeader"
 }
 </script>
 
@@ -28,7 +22,7 @@ export default {
 .header {
   padding: 0.5em;
   background-color: white;
-  border-bottom: 2px solid rgba(0, 0, 0, 0.5);
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   border-radius: 3px;
 }
 
