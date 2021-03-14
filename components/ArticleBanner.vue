@@ -1,11 +1,11 @@
 <template>
   
-  <div class="container article-banner">
+  <div class="container article-banner darker-bg">
     <div class="img-side">
       <img :src="require(`~/assets/article-${articles[focus].img_id}.jpg`)" alt="Article 1 - A violin">
       <ul class="dot-container">
         <template v-for="dotFocusId in 4">
-          <li :key="dotFocusId - 1" class="dot-button" :class="(dotFocusId - 1) == focus ? 'dot-focus' : ''" @click="chooseArticle(dotFocusId - 1)"></li>
+          <li :key="dotFocusId - 1" class="dot-button shadow" :class="(dotFocusId - 1) == focus ? 'dot-focus' : ''" @click="chooseArticle(dotFocusId - 1)"></li>
         </template>
       </ul>
     </div>
@@ -41,11 +41,7 @@ export default {
 <style scoped>
 .article-banner {
   position: relative;
-  background-color: var(--primary-color);
   height: 400px;
-  border-bottom: 3px solid rgba(0, 0, 0, 0.5);
-  border-right: 3px solid rgba(0, 0, 0, 0.5);
-  border-left: 3px solid rgba(0, 0, 0, 0.5);
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
@@ -63,7 +59,7 @@ export default {
   margin: 0 1em;
   width: 1em;
   height: 1em;
-  border: 2px solid rgba(0, 0, 0, 0.7);
+  border: 2px solid rgba(0, 0, 0, 0.9);
   border-radius: 50%;
   background-color: rgba(255, 255, 255, 0.2);
 }

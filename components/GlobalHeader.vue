@@ -1,5 +1,5 @@
 <template>
-  <header class="header">
+  <header class="header shadow">
     <div class= "container header-content">
       <div class="logotipo">
         <nuxt-link to="/"><img src="~/assets/logotipo-mini.png" alt="logo"></nuxt-link>
@@ -20,10 +20,10 @@ export default {
 
 <style scoped>
 .header {
+  position: relative;
   padding: 0.5em;
   background-color: white;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  border-radius: 3px;
+  z-index: 10;
 }
 
 .header-content {

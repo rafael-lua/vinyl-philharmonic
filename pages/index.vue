@@ -1,13 +1,18 @@
 <template>
-  <ArticleBanner />
+  <div>
+    <ArticleBanner />
+    <HomeNews />
+  </div>
 </template>
 
 <script>
 import ArticleBanner from "../components/ArticleBanner";
+import HomeNews from "../components/HomeNews";
 
 export default {
   components: {
-    ArticleBanner
+    ArticleBanner,
+    HomeNews
   }
 }
 </script>
