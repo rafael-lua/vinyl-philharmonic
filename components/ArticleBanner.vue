@@ -10,8 +10,8 @@
       </ul>
     </div>
     <div class="text-side">
-      <h1 class="light-color">{{articles[focus].title.toUpperCase()}}</h1>
-      <h2 class="light-color">{{articles[focus].desc}}</h2>
+      <h1>{{articles[focus].title.toUpperCase()}}</h1>
+      <h2>{{articles[focus].desc}}</h2>
       <nuxt-link to="/" class="article-button">READ MORE</nuxt-link> <!-- Bind the articles[focus] id into the button url -->
     </div>
   </div>

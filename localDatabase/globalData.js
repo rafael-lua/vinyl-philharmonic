@@ -26,3 +26,30 @@ export const articlesList = [
     img_id: "4"
   }
 ]
+
+export const newsList = [
+  {
+    id: "1",
+    title: "News 1",
+    desc: "Integer hendrerit orci nisl, a sodales mi scelerisque et. Proin eu bibendum nibh. In neque justo, blandit quis ligula quis, aliquam elementum quam.",
+    date: "Feb 15, 2021"
+  },
+  {
+    id: "2",
+    title: "News 2",
+    desc: "Ut vitae molestie sem, quis fringilla erat. Duis et blandit metus. Nunc massa magna, vestibulum ac lectus vulputate, semper pharetra massa.",
+    date: "Jan 19, 2021"
+  },
+  {
+    id: "3",
+    title: "News 3",
+    desc: "Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Maecenas lorem ipsum, rhoncus sit amet mollis at, pellentesque consectetur odio.",
+    date: "Jan 03, 2021"
+  },
+  {
+    id: "4",
+    title: "News 4",
+    desc: "Donec sit amet leo at nulla maximus aliquet. In eget dictum justo. Ut lacus dolor, facilisis in risus in, pellentesque mattis nisl. Integer posuere pellentesque est et iaculis.",
+    date: "Dez 17, 2020"
+  }
+];

@@ -1,31 +1,61 @@
 <template>
   <div class="container news-area dark-bg">
-    <template v-for="n in 4">
-      <div class="news-banner shadow-light" :key="n">
-        <div class="news-info">
-          <h2>Title</h2>
-          <h3>Description Etiam sed mauris in sapien scelerisque tristique. Quisque mollis dapibus pulvinar. Nullam posuere dapibus erat, eget pulvinar diam imperdiet ut. Nunc id mollis nunc.</h3>
-        </div>
-        <div class="news-date">
-          <p>Date</p>
-        </div>
-      </div>
-    </template>
+    <h1>NEWS</h1>
+    <hr>
+    <div class="news-wrapper">
+      <template v-for="newsId in 4">
+
+        <nuxt-link to="/" :key="newsId"> <!-- Add the link to the news based on their id -->
+
+          <div class="news-banner shadow-light">
+            <div class="news-info">
+              <h2>{{newsList[newsId - 1].title}}</h2>
+              <h3>{{newsList[newsId - 1].desc}}</h3>
+            </div>
+            <div class="news-date">
+              <p>{{newsList[newsId - 1].date}}</p>
+            </div>
+          </div>
+
+        </nuxt-link>
+
+      </template>
+    </div>
   </div>
 </template>
 
 <script>
+import {newsList} from "../localDatabase/globalData";
+
 export default {
-  name: "HomeNews"
+  name: "HomeNews",
+  data() {
+    return {
+      newsList: newsList
+    }
+  }
 }
 </script>
 
 <style>
 .news-area {
+  padding: 1em;
+}
+
+.news-area h1 {
+  font-weight: 700;
+}
+
+.news-area hr {
+  width: 15%;
+  margin-bottom: 1.5em;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.news-wrapper {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  padding: 1em;
 }
 
 .news-banner {
@@ -50,11 +80,12 @@ export default {
 }
 
 .news-info h3 {
+  height: 75px;
   font-size: 0.85em;
   word-wrap: break-word;
 }
 
-.news-banner .news-date {
+.news-date {
   width: 75%;
   margin: 0 auto;
   text-align: center;
@@ -62,11 +93,16 @@ export default {
  
 }
 
-.news-banner .news-date p {
+.news-date p {
   font-size: 0.85em;
   font-weight: 700;
   font-style: italic;
   border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.news-banner:hover {
+  color: var(--link-color) !important;
+  border: 1px solid var(--link-color);
 }
 
 </style>
