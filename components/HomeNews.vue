@@ -1,13 +1,13 @@
 <template>
   <div class="container news-area dark-bg">
-    <h1>NEWS</h1>
-    <hr>
+    <h1 class="section-title">NEWS</h1>
+    <hr class="section-hr">
     <div class="news-wrapper">
       <template v-for="newsId in 4">
 
         <nuxt-link to="/" :key="newsId"> <!-- Add the link to the news based on their id -->
 
-          <div class="news-banner shadow-light">
+          <div class="news-banner shadow">
             <div class="news-info">
               <h2>{{newsList[newsId - 1].title}}</h2>
               <h3>{{newsList[newsId - 1].desc}}</h3>
@@ -37,19 +37,9 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .news-area {
   padding: 1em;
-}
-
-.news-area h1 {
-  font-weight: 700;
-}
-
-.news-area hr {
-  width: 15%;
-  margin-bottom: 1.5em;
-  border: 1px solid rgba(255, 255, 255, 0.25);
 }
 
 .news-wrapper {

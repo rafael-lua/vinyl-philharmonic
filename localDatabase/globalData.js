@@ -53,3 +53,19 @@ export const newsList = [
     date: "Dez 17, 2020"
   }
 ];
+
+
+export const concertList = [
+  {
+    id: "1",
+    title: "Live at San Diego",
+    date: "Dez 08, 2020",
+    img_id: "1"
+  },
+  {
+    id: "2",
+    title: "Live at London",
+    date: "Oct 12, 2020",
+    img_id: "2"
+  }
+];

@@ -76,12 +76,6 @@ code, pre {
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
-.shadow-light {
-  -webkit-box-shadow: var(--primary-color) 0px 7px 29px 0px;
-  -moz-box-shadow: var(--primary-color) 0px 7px 29px 0px;
-  box-shadow: var(--primary-color) 0px 7px 29px 0px;
-}
-
 .darker-bg {
   background-color: var(--primary-color);
 }
@@ -109,6 +103,16 @@ code, pre {
 
 .text-shadow {
   text-shadow: -1px 1px 2px #000, 1px 1px 2px #000, 1px -1px 0 #000, -1px -1px 0 #000;
+}
+
+.section-title {
+  font-weight: 700;
+}
+
+.section-hr {
+  width: 15%;
+  margin-bottom: 1.5em;
+  border: 1px solid rgba(255, 255, 255, 0.25);
 }
 
 
