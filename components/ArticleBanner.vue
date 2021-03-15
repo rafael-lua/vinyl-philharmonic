@@ -12,7 +12,7 @@
     <div class="text-side">
       <h1>{{articles[focus].title.toUpperCase()}}</h1>
       <h2>{{articles[focus].desc}}</h2>
-      <nuxt-link to="/" class="article-button">READ MORE</nuxt-link> <!-- Bind the articles[focus] id into the button url -->
+      <nuxt-link to="/" class="article-button btn">READ MORE</nuxt-link> <!-- Bind the articles[focus] id into the button url -->
     </div>
   </div>
 
@@ -26,13 +26,27 @@ export default {
   data() {
     return {
       articles: articlesList,
-      focus: 0
+      focus: 0,
+      focusChange: null
     }
+  },
+  mounted() {
+    this.setFocusTimer();
   },
   methods: {
     chooseArticle(id) {
       this.focus = id;
-      console.log(id);
+
+      // Reset timer after user click, so it doesn't change too fast
+      clearInterval(this.focusChange);
+      this.setFocusTimer();
+    },
+    setFocusTimer() {
+      this.focusChange = setInterval(
+        () => {
+          if(this.focus < 3){ this.focus += 1; } else { this.focus = 0; }
+        }, 4000
+      );
     }
   }
 }
@@ -99,19 +113,8 @@ export default {
 
 .article-button {
   position: absolute;
-  padding: 0.55em;
   bottom: 1.5em;
   right: 1.5em;
-  background-color: rgba(0, 0, 0, 0);
-  color: var(--link-color);
-  border: 1px solid var(--link-color);
-  border-radius: 5px;
-  font-weight: 700;
-}
-
-.article-button:hover {
-  background-color: var(--link-color-focused);
-  color: var(--primary-color);
 }
 
 </style>
