@@ -1,6 +1,6 @@
 <template>
   <div>
-    <GlobalHeader />
+    <TheHeader />
     <Nuxt />
   </div>
 </template>
