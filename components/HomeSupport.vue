@@ -24,7 +24,8 @@ export default {
 
 <style scoped>
 .support-area {
-  height: 375px;
+  height: 450px;
+  padding: 2em 0;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
