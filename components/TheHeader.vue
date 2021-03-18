@@ -6,6 +6,10 @@
       </div>
       <nav class="navbar">
         <nuxt-link to="/">Concerts</nuxt-link>
+        <nuxt-link to="/">Orchestra</nuxt-link>
+        <nuxt-link to="/">Academy</nuxt-link>
+        <nuxt-link to="/">News</nuxt-link>
+        <nuxt-link to="/">Contact</nuxt-link>
       </nav>  
     </div>    
   </header>
@@ -38,8 +42,12 @@ export default {
   color: var(--primary-color);
 }
 
+.navbar>* {
+  margin: 0 0.5em;
+}
+
 .navbar a {
-  font-size: 1.3em;
+  font-size: 1em;
   text-decoration: none;
   color: var(--secondary-color);
   font-weight: 300;
@@ -52,6 +60,16 @@ export default {
   font-weight: 700;
 }
 
+.header img {
+  width: 50%;
+}
 
+.header:hover img {
+  width: 100%;
+}
+
+.header:hover .navbar a {
+  font-size: 1.3em;
+}
 
 </style>
